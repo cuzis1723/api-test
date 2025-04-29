@@ -1,4 +1,4 @@
-name: Deploy API on Code Changes
+name: test
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'backend/api_heavy/**'
 
 jobs:
-  deploy:
+  test:
     runs-on: self-hosted
 
     steps:
@@ -15,4 +15,4 @@ jobs:
 
     - name: Run Uvicorn
       working-directory: ./backend/api_heavy
-      run: nohup uvicorn main:app --host 0.0.0.0 --port 8000
+      run: nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
