@@ -1,4 +1,4 @@
-name: Deploy API on Code Change
+name: Deploy API on Code Changes
 
 on:
   push:
